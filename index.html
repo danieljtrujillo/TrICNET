@@ -4,14 +4,48 @@
     <script src="https://unpkg.com/@tensorflow/tfjs"></script>
     <script src="https://unpkg.com/@tensorflow-models/mobilenet@2.0.2"></script>
     <script src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
+    <style>
+
+.console {
+  text-align: center;
+  font-size: 14px;
+  margin: auto;
+  height: 150px;
+  width: 40%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px;
+  overflow: auto;
+}   
+.video {
+  display: block;
+  margin: auto;
+  padding: 10px 40;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}      
+      
+.center {
+  margin: auto;
+  width: 40%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px;
+}
+</style>
   </head>
   <body>
-    <div id="console"></div>
+    <h2>
+    <div class="console" id="console"></div>
+    </h2>
     <!-- Add an image that we will use to test -->
+    <div class="video">
     <video autoplay playsinline muted id="webcam" width="224" height="224"></video>
+    </div>
+    
+    
+    <div class="center">
     <button id="class-a">Add A</button>
     <button id="class-b">Add B</button>
     <button id="class-c">Add C</button>
+    </div>
     <!-- Load index.js after the content of the page -->
     <script src="index.js"></script>
   </body>
