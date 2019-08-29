@@ -7,10 +7,12 @@
     <style>
 
 .console {
+  font-size: 15px;
+  line-height: 0.5;
   background-color: #E0E0E0;
   text-align: center;
   margin: auto;
-  height: 150px;
+  height: 45px;
   width: 90%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 10px;
@@ -44,21 +46,19 @@
   cursor: pointer;
 }
 
-.button1 {width: 100%;}
-.button2 {width: 100%;}
-.button3 {width: 100%;}
+.button1 {width: 100%; border-radius: 12px;}
+.button2 {width: 100%; border-radius: 12px;}
+.button3 {width: 100%; border-radius: 12px;}
 </style>
   </head>
   <body>
+    <!-- Add an image that we will use to test -->
+    <div class="video" align="center">
+    <video autoplay playsinline muted id="webcam" width="280" height="280"></video>
+    </div>
     <h2>
     <div class="console" id="console"></div>
     </h2>
-    <!-- Add an image that we will use to test -->
-    <div class="video" align="center">
-    <video autoplay playsinline muted id="webcam" width="360" height="360"></video>
-    </div>
-    
-    
     <div class="buttondisplay">
     <button class="button button1" id="class-a">Add A</button><br>
     <button class="button button2" id="class-b">Add B</button><br>
