@@ -1,11 +1,19 @@
 <html>
   <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Load the latest version of TensorFlow.js -->
     <script src="https://unpkg.com/@tensorflow/tfjs"></script>
     <script src="https://unpkg.com/@tensorflow-models/mobilenet@2.0.2"></script>
     <script src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
-    <style>
+    <!-- SELECTION TO BUTTON SWITCHEROO
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/jquery.switchButton.js"></script>
+     -->
 
+  <style>
 .console {
   font-size: 15px;
   line-height: 0.5;
@@ -18,14 +26,14 @@
   padding: 6px;
   overflow: auto;
 }
-      
+
 .video {
   display: block;
   margin: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-}      
-      
+}
+
 .buttondisplay {
   background-color: #E0E0E0;
   margin: auto;
@@ -34,6 +42,7 @@
   padding: 6px;
 }
 .button {
+      margin: auto;
   background-color: #696969; /* Green */
   border: none;
   color: white;
@@ -49,6 +58,71 @@
 .button1 {width: 30%; border-radius: 10px;}
 .button2 {width: 30%; border-radius: 10px;}
 .button3 {width: 30%; border-radius: 10px;}
+
+.button4 {width: 90%; border-radius: 10px;}
+
+.controls {
+  text-align: center;
+  background-color: #E0E0E0;
+  margin: auto;
+  width: 90%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 6px;
+}
+.select {
+    margin: auto;
+  width: 90%;
+  border-radius: 10px;
+  text-align: center;
+      }
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
 </style>
   </head>
   <body>
@@ -60,12 +134,39 @@
     <h2>
     <div class="console" id="console"></div>
     </h2>
-    
+
     <div class="buttondisplay">
     <button class="button button1" id="class-a">Add A</button>
     <button class="button button2" id="class-b">Add B</button>
     <button class="button button3" id="class-c">Add C</button>
     </div>
+
+    <br>
+
+    <div class="controls">
+    <select class ="select" id="select">
+    <option></option>
+    </select>
+    <button class="button button4" id="button">SWITCH CAMERA</button>
+    <br>
+
+    </div>
+<!--  <label class="switch">
+  <input type="checkbox" id"button" checked>
+  <span class="slider round"></span>
+  </label>
+
+<script>
+ // $('.btn-switch').switchButton();
+//function check() {
+//  document.getElementById("select").checked = true;
+//  }
+//function uncheck() {
+//  document.getElementById("select").checked = false;
+//}
+//</script>
+
+-->
     <!-- Load index.js after the content of the page -->
     <script src="index.js"></script>
   </body>
