@@ -5,7 +5,7 @@ const webcamElement = document.getElementById('webcam');
 const button = document.getElementById('button');
 const select = document.getElementById('select');
 let currentStream;
-let shouldFaceUser = true;
+//let shouldFaceUser = true;
 let net;
 
 async function app() {
@@ -56,7 +56,7 @@ function stopMediaTracks(stream) {
   stream.getTracks().forEach(track => {
     track.stop();
   });
-    shouldFaceUser = !shouldFaceUser;
+//    shouldFaceUser = !shouldFaceUser;
   //capture();
 }
 
@@ -77,7 +77,7 @@ function gotDevices(mediaDevices) {
   });
 }
 
- //SETUP WEBCAM FOR MODEL TRAINING
+//SETUP WEBCAM FOR MODEL TRAINING
 async function setupWebcam() {
   return new Promise((resolve, reject) => {
     const navigatorAny = navigator;
@@ -103,7 +103,7 @@ button.addEventListener('click', event => {
   }
   const videoConstraints = {};
   if (select.value === '') {
-    videoConstraints.facingModefacingMode = shouldFaceUser ? 'user' : 'environment';
+    videoConstraints.facingMode = 'environment';
   } else {
     videoConstraints.deviceId = { exact: select.value };
   }
